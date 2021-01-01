@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>TextConverter</title>
+  <title>Speech recognition</title>
+  <link rel="stylesheet" type="text/html" href="./styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/214d06ed66.js"></script>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,5 +14,8 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    window.SpeechRecognition = window.webkitSpeechRecognition;
+    </script>
 </body>
 </html>

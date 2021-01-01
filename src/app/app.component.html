@@ -1,21 +1,33 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- <div class="container">
+  <div #listening>Listening...</div>
+  
+  <div><button [ngClass] = "isListening ? 'fa-microphone-slash' : 'fa-microphone'" class="fa" #icon (click)="iconClick($event)" [disabled]="isListening"></button>
+    
+    <i class="fa fa-close" (click)="close()"></i>
+  </div>
+  <div class="text-box" #container contenteditable="false"></div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<audio class="sound" #sound src="../assets/chime.mp3">Text</audio> -->
 
+<div class="container-fluid">
+  <div class="listening">
+    <div class="listeningDiv">
+      <span style="width: 70%; text-align: center;" class="my-1 mx-1" #listening></span>
+      <span style="min-width: 10%;">
+        <button class="sound fa fa-microphone my-1 mx-1" [ngClass]="isListening ? 'activeCls': 'nonActiveCls'"
+        #icon (click)="iconClick($event)"></button>
+        <button class="closeBtn fa fa-close my-1 mx-1" (click)="close()"></button>
+      </span>
+    </div>
+    <div class="output">
+      <div class="text-box my-1" #container contenteditable="false">
+        <div class="textCls my-1 py-1" *ngFor="let ele of items">
+          <span style="min-width: 90%">{{ele}}</span>
+          <span style="min-width:10%"><button class="fa fa-volume-up mx-1" (click)="speak(ele)"></button></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>
