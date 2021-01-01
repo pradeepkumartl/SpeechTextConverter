@@ -55,7 +55,6 @@ export class AppComponent implements OnInit{
       this.result = true;
       this.listening.nativeElement.textContent = "User said...";
       let speechToText:string = event.results[0][0].transcript;
-      this.paragraph.textContent = speechToText;
       me.addItems(speechToText);
       me.reset();
 

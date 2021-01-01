@@ -24,7 +24,7 @@
       <div class="text-box my-1" #container contenteditable="false">
         <div class="textCls my-1 py-1" *ngFor="let ele of items">
           <span style="min-width: 90%">{{ele}}</span>
-          <span style="min-width:10%"><button class="fa fa-volume-up mx-1" (click)="speak(ele)"></button></span>
+          <span style="min-width:10%"><button class="fa fa-volume-up mx-1" style="outline: none;" (click)="speak(ele)"></button></span>
         </div>
       </div>
     </div>
